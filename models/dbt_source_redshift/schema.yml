@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: dbt_source_redshift # required
+    description: Base de datos pre cargada en cluster de Redshift
+    database: dev
+    schema: public
+    tables:
+      - name: sales
+        description: Tabla de ventas
+      - name: event
+        description: Tabla de eventos
+      - name: users
+        description: Tabla de vendedores
+      - name: category
+        description: Tabla de categorias
