@@ -7,10 +7,27 @@ sources:
     schema: public
     tables:
       - name: sales
-        description: Tabla de ventas
+        description: "Tabla de ventas"
       - name: event
-        description: Tabla de eventos
+        description: "Tabla de eventos"
       - name: users
-        description: Tabla de vendedores
+        description: "Tabla de vendedores"
       - name: category
-        description: Tabla de categorias
+        description: "Tabla de categorias"
+
+models: 
+  - name: dbt_source_redshift__ventas_x_categoria
+    description: "Tabla de ventas por categoria"
+    tests:
+      - valida_unicidad
+    columns:
+      - name: salesid
+        description: '{{ doc("detalle_campo_salesid") }}'
+      - name: listid
+        description: '{{ doc("detalle_campo_listid") }}'
+      - name: sellerid
+        description: '{{ doc("detalle_campo_sellerid") }}'
+      - name: userid
+        description: '{{ doc("detalle_campo_userid") }}'
+      - name: catid
+        description: '{{ doc("detalle_campo_catid") }}'
